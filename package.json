@@ -1,0 +1,22 @@
+{
+  "name": "the-ride-classroom-app",
+  "version": "1.0.0",
+  "description": "The Ride technical task",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex-curtin/the-ride-classroom-app.git"
+  },
+  "author": "Alex Curtin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alex-curtin/the-ride-classroom-app/issues"
+  },
+  "homepage": "https://github.com/alex-curtin/the-ride-classroom-app#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
