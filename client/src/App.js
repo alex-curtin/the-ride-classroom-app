@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 import Navbar from './components/layout/Navbar';
+import Students from './components/Students';
 import { getStudents, getDates, getDesks, getRooms } from './services/api-helper';
 import './App.css';
 
@@ -69,6 +71,23 @@ class App extends Component {
     return (
       <div className="app" data-test="component-app">
         <Navbar user={user} toggleUser={this.toggleUser} />
+        <section className="main-content-container">
+          <Switch>
+            <Route
+              exact path='/teacher/students'
+              render={() => <Students students={students} />}
+            />
+
+            <Route
+              exact path='/teacher/students/:id'
+              render={({ match }) => (
+                <StudentDetail
+                  student={students.find(student => student.id === match.params.id)}
+                />
+              )}
+            />
+          </Switch>
+        </section>
       </div>
     );
   }
