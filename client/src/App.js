@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import Navbar from './Navbar';
+
 import { getStudents, getDates, getDesks, getRooms } from './services/api-helper';
 
 class App extends Component {
@@ -16,8 +18,7 @@ class App extends Component {
   }
 
   /**
-   * Gets students from API and sets them in state
-   * @function loadStudents
+   * Gets students from API and sets them in state.
    */
   loadStudents = async () => {
     const students = await getStudents();
@@ -25,8 +26,7 @@ class App extends Component {
   }
 
   /**
-   * Gets dates from API and sets them in state
-   * @function loadDates
+   * Gets dates from API and sets them in state.
    */
   loadDates = async () => {
     const dates = await getDates();
@@ -34,8 +34,7 @@ class App extends Component {
   }
 
   /**
-  * Gets desks from API and sets them in state
-  * @function loadDesks
+  * Gets desks from API and sets them in state.
   */
   loadDesks = async () => {
     const desks = await getDesks();
@@ -43,14 +42,17 @@ class App extends Component {
   }
 
   /**
-  * Gets desks from API and sets them in state
-  * @function loadRooms
+  * Gets desks from API and sets them in state.
   */
   loadRooms = async () => {
     const rooms = await getRooms();
     this.setState({ rooms });
   };
 
+  /**
+   * Toggles users state from 'teacher' to 'custodian'
+   *  and vice versa.
+   */
   toggleUser = () => {
     const { user } = this.state;
     let newUser;
@@ -65,7 +67,7 @@ class App extends Component {
   render() {
     return (
       <div className="app" data-test="component-app">
-
+        <Navbar user={user} toggleUser={this.toggleUser} />
       </div>
     );
   }

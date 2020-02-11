@@ -1,10 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, ShallowWrapper } from 'enzyme';
 import moxios from 'moxios';
 
 import App from './App';
 import { findByTestAttr } from './testUtils.js';
 
+/**
+ * Creates a ShallowWrapper for App component
+ * @param {object} state - State for this setup.
+ * @returns {ShallowWrapper}
+ */
 const setup = (state = {}) => {
   const wrapper = shallow(<App />);
   wrapper.setState(state);
