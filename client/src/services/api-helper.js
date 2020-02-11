@@ -37,6 +37,7 @@ export const getDesks = async () => {
  * @function getRooms
  * @returns {array} - Array of rooms.
  */
-export const getRooms = asynce() => {
+export const getRooms = async () => {
   const resp = await axios.get(`${BASE_URL}/rooms`);
+  return resp.data;
 };
