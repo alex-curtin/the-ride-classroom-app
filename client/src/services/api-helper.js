@@ -14,13 +14,13 @@ export const getStudents = async () => {
 
 /**
  * Get all dates data from API.
- * @function getDates
+ * @function fetchDates
  * @returns {array} - Array of dates.
  */
 export const getDates = async () => {
-  const resp = await axios.get(`${BASE_URL}/dates`);
-  return resp.data;
-};
+  const res = await axios.get(`${BASE_URL}/dates`);
+  return res.data;
+}
 
 /**
  * Get all desks data from API.

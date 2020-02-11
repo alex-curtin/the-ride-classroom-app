@@ -4,8 +4,6 @@ import { shallow, mount } from 'enzyme';
 import Dates from './Dates';
 import { findByTestAttr } from '../../testUtils.js';
 
-
-
 const defaultProps = {
   dates: [
     { date: 1577854800000 },
@@ -49,5 +47,5 @@ test('loadDates runs on component mount', () => {
 
   const loadDatesCallCount = loadDatesMock.mock.calls.length;
   expect(loadDatesCallCount).toBe(1);
-  wrapper.unmount();
+  // wrapper.unmount();
 });

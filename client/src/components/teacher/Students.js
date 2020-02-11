@@ -18,7 +18,7 @@ const Students = ({ students, loadStudents }) => {
         <h2>Students</h2>
         {students.map(student => (
           <div key={student.id} data-test='student-item'>
-            <Link to={`/students/${student.id}`}>
+            <Link to={`/teacher/students/${student.id}`}>
               <p>{student.bio.givenName} {student.bio.familyName}</p>
             </Link>
           </div>

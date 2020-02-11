@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Students from './components/teacher/Students';
 import StudentDetails from './components/teacher/StudentDetails';
+import Dates from './components/teacher/Dates';
 import { getStudents, getDates, getDesks, getRooms } from './services/api-helper';
 import './App.css';
 
@@ -25,15 +26,16 @@ class App extends Component {
   loadStudents = async () => {
     const students = await getStudents();
     this.setState({ students });
-  }
+  };
 
   /**
    * Gets dates from API and sets them in state.
    */
   loadDates = async () => {
     const dates = await getDates();
+    console.log(dates);
     this.setState({ dates });
-  }
+  };
 
   /**
   * Gets desks from API and sets them in state.
@@ -41,7 +43,7 @@ class App extends Component {
   loadDesks = async () => {
     const desks = await getDesks();
     this.setState({ desks });
-  }
+  };
 
   /**
   * Gets desks from API and sets them in state.
@@ -91,6 +93,16 @@ class App extends Component {
                 />
               )}
             />
+
+            <Route
+              exact path='/teacher/dates'
+              render={() => (
+                <Dates
+                  dates={dates}
+                  loadDates={this.loadDates}
+                />)}
+            />
+
           </Switch>
         </section>
       </div>

@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -18,9 +20,11 @@
   },
   "homepage": "https://github.com/alex-curtin/the-ride-classroom-app#readme",
   "dependencies": {
+    "concurrently": "^5.1.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "cors": "^2.8.5",
     "jest": "^24.9.0",
     "nodemon": "^2.0.2",
     "supertest": "^4.0.2"
