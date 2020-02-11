@@ -9,7 +9,9 @@ import { Link } from 'react-router-dom';
  */
 const Students = ({ students, loadStudents }) => {
   useEffect(() => {
-    loadStudents();
+    if (students.length === 0) {
+      loadStudents();
+    }
   }, [loadStudents]);
 
   if (students.length > 0) {

@@ -33,7 +33,6 @@ class App extends Component {
    */
   loadDates = async () => {
     const dates = await getDates();
-    console.log(dates);
     this.setState({ dates });
   };
 
