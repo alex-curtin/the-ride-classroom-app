@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
 
-import Navbar from './Navbar';
-
+import Navbar from './components/layout/Navbar';
 import { getStudents, getDates, getDesks, getRooms } from './services/api-helper';
+import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -65,6 +64,8 @@ class App extends Component {
   }
 
   render() {
+    const { user, students, dates, desks, rooms } = this.state;
+
     return (
       <div className="app" data-test="component-app">
         <Navbar user={user} toggleUser={this.toggleUser} />

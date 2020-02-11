@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { findByTestAttr } from '../testUtils.js';
+import { findByTestAttr } from '../../testUtils.js/index.js';
 import Navbar from './Navbar';
 
 /**
@@ -31,7 +31,7 @@ describe('renders correct links if `user` prop is `teacher', () => {
     const custodianLinks = findByTestAttr(wrapper, 'custodian-links');
     expect(custodianLinks.length).toBe(0);
   });
-})
+});
 
 describe('renders correct links if `user` prop is `custodian', () => {
   const wrapper = setup({ user: 'custodian' });
