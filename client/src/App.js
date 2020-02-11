@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Navbar from './components/layout/Navbar';
-import Students from './components/Students';
+import Students from './components/teacher/Students';
+import StudentDetails from './components/teacher/StudentDetails';
 import { getStudents, getDates, getDesks, getRooms } from './services/api-helper';
 import './App.css';
 
@@ -75,13 +76,17 @@ class App extends Component {
           <Switch>
             <Route
               exact path='/teacher/students'
-              render={() => <Students students={students} />}
+              render={() => (
+                <Students
+                  students={students}
+                  loadStudents={this.loadStudents}
+                />)}
             />
 
             <Route
               exact path='/teacher/students/:id'
               render={({ match }) => (
-                <StudentDetail
+                <StudentDetails
                   student={students.find(student => student.id === match.params.id)}
                 />
               )}

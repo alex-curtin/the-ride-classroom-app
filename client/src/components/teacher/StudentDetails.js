@@ -1,5 +1,11 @@
 import React from 'react';
 
+/**
+ * Functional React component for a single student details.
+ * @user Teacher
+ * @param {object} props - React props.
+ * @returns {JSX.Element} - Rendered component.
+ */
 const StudentDetails = ({
   student: {
     id,

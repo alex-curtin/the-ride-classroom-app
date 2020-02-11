@@ -56,13 +56,13 @@ test('renders `loading` if students have not yet loaded', () => {
   expect(loading.length).toBe(1);
 });
 
-test('getStudents runs on component mount', () => {
-  const getStudentsMock = jest.fn();
-  const wrapper = mount(<Students students={[]} getStudents={getStudentsMock} />);
+test('loadStudents runs on component mount', () => {
+  const loadStudentsMock = jest.fn();
+  const wrapper = mount(<Students students={[]} loadStudents={loadStudentsMock} />);
   wrapper.mount();
 
-  const getStudentsCallCount = getStudentsMock.mock.calls.length;
-  expect(getStudentsCallCount).toBe(1);
+  const loadStudentsCallCount = loadStudentsMock.mock.calls.length;
+  expect(loadStudentsCallCount).toBe(1);
   wrapper.unmount();
 });
 

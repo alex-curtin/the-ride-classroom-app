@@ -5,13 +5,13 @@ const Navbar = ({ user, toggleUser }) => {
   const teacherLinks = (
     <ul data-test='teacher-links'>
       <li>
-        <Link to='/students'>
+        <Link to='/teacher/students'>
           Students
       </Link>
       </li>
 
       <li>
-        <Link to='/dates'>
+        <Link to='/teacher/dates'>
           Dates
           </Link>
       </li>
@@ -21,7 +21,7 @@ const Navbar = ({ user, toggleUser }) => {
   const custodianLinks = (
     <ul data-test='custodian-links'>
       <li>
-        <Link to='/desks'>
+        <Link to='/custodian/desks'>
           Desks
           </Link>
       </li>

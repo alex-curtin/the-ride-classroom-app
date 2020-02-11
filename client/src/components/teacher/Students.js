@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom';
  * @param {object} props - React props.
  * @returns {JSX.Element} - Rendered component (or 'loading' if students prop has not loaded).
  */
-const Students = ({ students, getStudents }) => {
+const Students = ({ students, loadStudents }) => {
   useEffect(() => {
-    getStudents();
-  }, [getStudents]);
+    loadStudents();
+  }, [loadStudents]);
 
   if (students.length > 0) {
     return (
