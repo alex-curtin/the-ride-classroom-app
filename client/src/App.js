@@ -5,6 +5,7 @@ import Navbar from './components/layout/Navbar';
 import Students from './components/teacher/Students';
 import StudentDetails from './components/teacher/StudentDetails';
 import Dates from './components/teacher/Dates';
+import DateDetails from './components/teacher/DateDetails';
 import { getStudents, getDates, getDesks, getRooms } from './services/api-helper';
 import './App.css';
 
@@ -100,6 +101,17 @@ class App extends Component {
                   dates={dates}
                   loadDates={this.loadDates}
                 />)}
+            />
+
+            <Route
+              exact path='/teacher/dates/:date'
+              render={() => (
+                <DateDetails
+                  date={dates.find(date => date.date === parseInt(match.params.date))}
+                  room={rooms[0]}
+                  students={students}
+                />
+              )}
             />
 
           </Switch>
