@@ -49,6 +49,17 @@ class App extends Component {
   loadRooms = async () => {
     const rooms = await getRooms();
     this.setState({ rooms });
+  };
+
+  toggleUser = () => {
+    const { user } = this.state;
+    let newUser;
+    if (user === 'teacher') {
+      newUser = 'custodian';
+    } else {
+      newUser = 'teacher';
+    };
+    this.setState({ user: newUser });
   }
 
   render() {

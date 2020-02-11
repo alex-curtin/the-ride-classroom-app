@@ -100,3 +100,10 @@ describe('test API call functions', () => {
     expect(newRoomsState).toEqual(data);
   })
 });
+
+test('toggleUser updates `user` state', () => {
+  const wrapper = setup({ user: 'custodian' });
+  wrapper.instance().toggleUser();
+  const newUserState = wrapper.instance().state.user;
+  expect(newUserState).toBe('teacher');
+})
