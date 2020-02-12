@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import Moment from 'react-moment';
 
+import DeskRepairs from './DeskRepairs';
+
 const DeskDetails = ({
   desk, dates,
   students, room,
@@ -32,27 +34,7 @@ const DeskDetails = ({
           <span>Purchased: </span>
           <Moment format='MM/DD/YYYY'>{desk.purchased}</Moment>
         </p>
-        {desk.repairs.length > 0 && (
-          <table>
-            <thead>
-              <tr>
-                <th>Date Broken</th>
-                <th>Date Fixed</th>
-                <th>Issue</th>
-                <th>Fix</th>
-              </tr>
-            </thead>
-            <tbody>
-              {desk.repairs.map(repair => (
-                <tr key={repair.repairId}>
-                  <td><Moment format='MM/DD/YYYY'>{repair.breakDate}</Moment></td>
-                  <td><Moment format='MM/DD/YYYY'>{repair.fixDate}</Moment></td>
-                  <td>{repair.issueString}</td>
-                  <td>{repair.fixString}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>)}
+        {desk.repairs.length > 0 && (<DeskRepairs repairs={desk.repairs} />)}
         <hr />
       </div>
     )
