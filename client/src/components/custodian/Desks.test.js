@@ -68,7 +68,7 @@ describe('Desks component', () => {
       const wrapper = setupMount(props);
 
       const loadDesksCallCount = loadDesksMock.mock.calls.length;
-      expect(loadDesksCallCount).toBe(1);
+      expect(loadDesksCallCount).toBe(0);
     })
 
   });
