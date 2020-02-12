@@ -11,15 +11,13 @@ const Desks = ({ desks, loadDesks }) => {
   if (desks.length > 0) {
     return (
       <div data-test='component-desks'>
-        <h2>Desks</h2>
+        <h2 className='page-headline'>Desks</h2>
         {desks.map(desk => (
-          <Link
-            to={`/custodian/desks/${desk.id}`}
-            data-test='desk-item'
-            key={desk.id}
-          >
-            <p>Desk ID: {desk.id}</p>
-          </Link>
+          <div className='list-item' key={desk.id} data-test='desk-item'>
+            <Link to={`/custodian/desks/${desk.id}`}>
+              <p>Desk ID: {desk.id}</p>
+            </Link>
+          </div>
         ))}
       </div>
     )

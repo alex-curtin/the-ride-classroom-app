@@ -25,8 +25,8 @@ const StudentDetails = ({
   }
 }) => {
   return (
-    <div data-test='component-student-details'>
-      <h2>{givenName} {familyName}</h2>
+    <div data-test='component-student-details' className='component-student-details'>
+      <h2 className='page-headline'>{givenName} {familyName}</h2>
       <p>Student id: <span>{id}</span></p>
       <p>Grade: <span>{grade}</span></p>
       <p>Age: <span>{age}</span></p>

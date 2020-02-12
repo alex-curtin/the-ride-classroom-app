@@ -1,0 +1,155 @@
+
+.App {
+  height: 100vh;
+}
+
+/**** GLOBAL ****/
+* {
+  box-sizing: border-box;
+  font-family: 'Helvetica', sans-serif;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  text-align: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+table {
+  border-spacing: 0 2px;
+  margin-bottom: 2rem;
+}
+
+thead {
+  background: #444;
+  color: white;
+}
+
+td, th {
+  padding: 1rem;
+  text-align: left;
+}
+
+td {
+  background: #eee;
+}
+
+/**** UTILITY ****/
+.main-content-container {
+  margin-left: 300px;
+  padding: 2rem 3rem;
+}
+
+.page-headline {
+  border-bottom: 1px solid #444;
+  padding: 1rem 0;
+  max-width: 470px;
+}
+
+.list-item {
+  background: #f4f4f4;
+  padding: .3rem 1rem;
+  margin-bottom: .05rem;
+  width: 60%;
+  max-width: 300px;
+}
+
+/**** NAV ****/
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  padding: 2rem 3rem;
+  background-color: #444;
+  color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0px 0px 15px -1px #555;
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+nav h2 {
+  text-transform: capitalize;
+  margin-left: .75em;
+}
+
+nav ul {
+  margin-bottom: 1rem;
+  padding: .25rem;
+}
+
+nav li {
+  list-style: none;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/**** STUDENTS *****/
+.student-item {
+  background: #f4f4f4;
+  padding: .6rem 1rem;
+  margin-bottom: .05rem;
+  width: 60%;
+  max-width: 300px;
+}
+
+.list-item:hover {
+  background: #eee;
+}
+
+.student-item p {
+  margin: 0;
+}
+
+/**** STUDENT DETAILS ****/
+.component-student-details p {
+  margin: .5rem 0;
+  font-weight: 800;
+  color: #444;
+}
+
+.component-student-details span {
+  font-weight: 600;
+}
+
+.component-student-details table {
+  width: 100%;
+  max-width: 470px;
+}
+
+/**** DATE DETAILS ****/
+.desks {
+  width: 50%;
+  min-width: 540px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.desk {
+  padding: 1rem;
+  border: 2px solid black;
+}

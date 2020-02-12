@@ -16,10 +16,11 @@ const Students = ({ students, loadStudents }) => {
 
   if (students.length > 0) {
     return (
-      <div data-test='component-students'>
-        <h2>Students</h2>
+      <div data-test='component-students' className='component-students'>
+        <h2 className='page-headline'>Students</h2>
+        <h4>click on a student to get details</h4>
         {students.map(student => (
-          <div key={student.id} data-test='student-item'>
+          <div key={student.id} data-test='student-item' className='list-item'>
             <Link to={`/teacher/students/${student.id}`}>
               <p>{student.bio.givenName} {student.bio.familyName}</p>
             </Link>

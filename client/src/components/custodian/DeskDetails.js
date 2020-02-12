@@ -30,12 +30,14 @@ const DeskDetails = ({
   if (desk && room && dates.length > 0 && students.length > 0) {
     return (
       <div data-test='component-desk-details'>
-        <p>Desk ID: {desk.id}</p>
+        <h2 className='page-headline'>Desk ID: {desk.id}</h2>
         <p>
           <span>Purchased: </span>
           <Moment format='MM/DD/YYYY'>{desk.purchased}</Moment>
         </p>
+        <h4>Desk Repair Data</h4>
         {desk.repairs.length > 0 && (<DeskRepairs repairs={desk.repairs} />)}
+        <h4>Desk History</h4>
         <DeskHistory dates={dates} desk={desk} students={students} />
         <hr />
       </div>
