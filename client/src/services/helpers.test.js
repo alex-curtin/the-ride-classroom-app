@@ -1,5 +1,5 @@
-import { getStudentByPositionId, getAbsentStudents } from './helpers';
-import { studentsProp, datesProp } from '../testUtils.js';
+import { getStudentByPositionId, getAbsentStudents, getStudentByDeskAndDate } from './helpers';
+import { studentsProp, datesProp, } from '../testUtils.js';
 
 
 describe('getStudentByPositionId', () => {
@@ -28,5 +28,21 @@ describe('getAbsentStudents', () => {
     const expectedResult = [students[2]];
     const result = getAbsentStudents(date, students);
     expect(result).toEqual(expectedResult);
-  })
-})
+  });
+});
+
+describe('getStudentByDeskAndDate', () => {
+  test('should return name of student who sat at desk', () => {
+    const deskId = 'e8c75fe7-89ec-4178-a6e8-bddcb4afac96';
+    const expectedResult = 'Leslie Mccarthy';
+    const result = getStudentByDeskAndDate(datesProp[0], studentsProp, deskId);
+    expect(result).toBe(expectedResult);
+  });
+
+  test('should return n/a if no student was seated at desk', () => {
+    const deskId = '7fd34fbf-fee9-4754-8ac9-15183394c705';
+    const expectedResult = 'n/a';
+    const result = getStudentByDeskAndDate(datesProp[0], studentsProp, deskId);
+    expect(result).toBe(expectedResult);
+  });
+});
