@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import Students from './Students';
 import { findByTestAttr, studentsProp } from '../../testUtils.js';
@@ -16,6 +17,19 @@ const defaultProps = {
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
   return shallow(<Students {...setupProps} />);
+};
+
+/**
+ * Mounts component, for testing lifecycle methods.
+ * @param {object} props - props for this setup.
+ * @returns {ReactWrapper}
+ */
+const setupMount = (props = {}) => {
+  const setupProps = { ...defaultProps, ...props };
+  return mount(
+    <Router>
+      <Students {...setupProps} />
+    </Router>);
 };
 
 describe('Students component', () => {
@@ -37,12 +51,27 @@ describe('Students component', () => {
     expect(loading.length).toBe(1);
   });
 
-  test('loadStudents should run on component mount', () => {
-    const loadStudentsMock = jest.fn();
-    const wrapper = mount(<Students students={[]} loadStudents={loadStudentsMock} />);
+  describe('loadStudents on component mount', () => {
+    test('should run if `students` prop is empty', () => {
+      const loadStudentsMock = jest.fn();
+      const props = { students: [], loadStudents: loadStudentsMock };
 
-    const loadStudentsCallCount = loadStudentsMock.mock.calls.length;
-    expect(loadStudentsCallCount).toBe(1);
-    wrapper.unmount();
+      const wrapper = setupMount(props);
+
+      const loadStudentsCallCount = loadStudentsMock.mock.calls.length;
+      expect(loadStudentsCallCount).toBe(1);
+      wrapper.unmount();
+    });
+
+    test('should not run if `students` prop is not empty', () => {
+      const loadStudentsMock = jest.fn();
+      const props = { loadStudents: loadStudentsMock };
+
+      const wrapper = setupMount(props);
+
+      const loadStudentsCallCount = loadStudentsMock.mock.calls.length;
+      expect(loadStudentsCallCount).toBe(0);
+      wrapper.unmount();
+    });
   });
 });
