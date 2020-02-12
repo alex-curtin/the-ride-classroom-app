@@ -32,26 +32,26 @@ const setupMount = (props = {}) => {
 };
 
 describe('Desks component', () => {
-  test('renders without error', () => {
+  test('should render without error', () => {
     const wrapper = setup();
     const component = findByTestAttr(wrapper, 'component-desks');
     expect(component.length).toBe(1);
   });
 
-  test('renders `loading` if `desks` prop not yet recieved', () => {
+  test('should render `loading` if `desks` prop not yet recieved', () => {
     const wrapper = setup({ desks: [] });
     const loading = findByTestAttr(wrapper, 'loading');
     expect(loading.length).toBe(1);
   });
 
-  test('renders desks', () => {
+  test('should render desks', () => {
     const wrapper = setup();
     const deskItems = findByTestAttr(wrapper, 'desk-item');
     expect(deskItems.length).toBe(defaultProps.desks.length);
   });
 
   describe('loadDesks function', () => {
-    test('runs if desks prop is empty', () => {
+    test('should run if desks prop is empty', () => {
       const loadDesksMock = jest.fn();
       const props = { desks: [], loadDesks: loadDesksMock };
 
@@ -59,9 +59,10 @@ describe('Desks component', () => {
 
       const loadDesksCallCount = loadDesksMock.mock.calls.length;
       expect(loadDesksCallCount).toBe(1);
+      wrapper.unmount();
     });
 
-    test('does not run if desks prop is not empty', () => {
+    test('should not run if desks prop is not empty', () => {
       const loadDesksMock = jest.fn();
       const props = { loadDesks: loadDesksMock };
 
@@ -69,7 +70,8 @@ describe('Desks component', () => {
 
       const loadDesksCallCount = loadDesksMock.mock.calls.length;
       expect(loadDesksCallCount).toBe(0);
-    })
+      wrapper.unmount();
+    });
 
   });
 });

@@ -32,13 +32,13 @@ const setupMount = (props = {}) => {
 };
 
 describe('DeskDetails component', () => {
-  test('renders without error', () => {
+  test('should render without error', () => {
     const wrapper = setup();
     const component = findByTestAttr(wrapper, 'component-desk-details');
     expect(component.length).toBe(1);
   });
 
-  test('renders loading if not yet received props', () => {
+  test('should render loading if not yet received props', () => {
     const wrapper = setup({ dates: [], students: [], room: null, desk: null });
     const loading = findByTestAttr(wrapper, 'loading');
     expect(loading.length).toBe(1);

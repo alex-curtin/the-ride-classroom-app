@@ -8,11 +8,11 @@ const DateDetails = ({ date, students, room, loadRooms, loadStudents }) => {
   useEffect(() => {
     if (!room) {
       loadRooms();
-    };
+    }
     if (students.length === 0) {
       loadStudents();
     }
-  });
+  }, [loadRooms, loadStudents]);
 
   const renderDesks = () => (room.positions.map(position => (
     <div data-test='desk-item' key={position}>

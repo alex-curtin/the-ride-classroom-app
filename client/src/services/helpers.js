@@ -9,7 +9,6 @@
  */
 export const getStudentByPositionId = (positionId, date, students) => {
   const dateStudent = date.students.find(student => student.positionId === positionId);
-
   if (dateStudent) {
     const student = students.find(student => student.id === dateStudent.studentId);
     return student;

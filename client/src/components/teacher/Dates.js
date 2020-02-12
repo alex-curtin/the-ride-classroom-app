@@ -4,8 +4,10 @@ import Moment from 'react-moment';
 
 const Dates = ({ dates, loadDates }) => {
   useEffect(() => {
-    loadDates();
-  }, [loadDates]);
+    if (dates.length === 0) {
+      loadDates();
+    }
+  }, [loadDates, dates]);
 
   if (dates.length > 0) {
     return (
@@ -14,7 +16,7 @@ const Dates = ({ dates, loadDates }) => {
         <ul>
           {dates.map(date => (
             <li key={date.date} data-test='date-item'>
-              <Link to={`teacher/dates/${date.date}`}>
+              <Link to={`/teacher/dates/${date.date}`}>
                 <Moment format='ddd, MMMM Do YYYY' date={date.date} />
               </Link>
             </li>

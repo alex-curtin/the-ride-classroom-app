@@ -112,6 +112,8 @@ class App extends Component {
                   date={dates.find(date => date.date === parseInt(match.params.date))}
                   room={rooms[0]}
                   students={students}
+                  loadRooms={this.loadRooms}
+                  loadStudents={this.loadStudents}
                 />
               )}
             />

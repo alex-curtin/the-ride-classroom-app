@@ -22,7 +22,7 @@ const setup = (props = {}) => {
 };
 
 describe('DeskHistory component', () => {
-  test('renders without error', () => {
+  test('should render without error', () => {
     const wrapper = setup();
     const component = findByTestAttr(wrapper, 'component-desk-history');
     expect(component.length).toBe(1);
