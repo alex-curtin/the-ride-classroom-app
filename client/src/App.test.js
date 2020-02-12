@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
+import { shallow, ShallowWrapper, mount } from 'enzyme';
+import { BrowserRouter as Router } from 'react-router-dom';
 import moxios from 'moxios';
 
 import App from './App';
@@ -12,6 +13,15 @@ import { findByTestAttr } from './testUtils.js';
  */
 const setup = (state = {}) => {
   const wrapper = shallow(<App />);
+  wrapper.setState(state);
+  return wrapper;
+}
+
+const setupWithRouter = (state = {}) => {
+  const wrapper = shallow(
+    <Router>
+      <App />
+    </Router>);
   wrapper.setState(state);
   return wrapper;
 }
@@ -112,5 +122,5 @@ describe('App component', () => {
     wrapper.instance().toggleUser();
     const newUserState = wrapper.instance().state.user;
     expect(newUserState).toBe('teacher');
-  })
-})
+  });
+});

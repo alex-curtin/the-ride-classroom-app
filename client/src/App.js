@@ -92,6 +92,7 @@ class App extends Component {
               render={({ match }) => (
                 <StudentDetails
                   student={students.find(student => student.id === match.params.id)}
+                  loadStudents={this.loadStudents}
                 />
               )}
             />

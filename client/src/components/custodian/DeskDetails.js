@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 
 import DeskRepairs from './DeskRepairs';
@@ -30,6 +31,10 @@ const DeskDetails = ({
   if (desk && room && dates.length > 0 && students.length > 0) {
     return (
       <div data-test='component-desk-details'>
+        <Link to='/custodian/desks'>
+          <i className='fas fa-angle-left back-link'></i>
+          {' '}all desks
+          </Link>
         <h2 className='page-headline'>Desk ID: {desk.id}</h2>
         <p>
           <span>Purchased: </span>

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 /**
  * Functional React component for a single student details.
@@ -33,6 +34,10 @@ const StudentDetails = ({ student, loadStudents }) => {
 
     return (
       <div data-test='component-student-details' className='component-student-details'>
+        <Link to='/teacher/students'>
+          <i className='fas fa-angle-left back-link'></i>
+          {' '}all students
+          </Link>
         <h2 className='page-headline'>{givenName} {familyName}</h2>
         <p>Student id: <span>{id}</span></p>
         <p>Grade: <span>{grade}</span></p>

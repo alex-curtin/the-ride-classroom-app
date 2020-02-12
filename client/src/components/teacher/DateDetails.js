@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 
 import DeskItem from './DeskItem';
@@ -31,6 +32,10 @@ const DateDetails = ({ date, students, room, loadRooms, loadStudents }) => {
   if (date && room && students.length > 0) {
     return (
       <div data-test='component-date-details'>
+        <Link to='/teacher/dates'>
+          <i className='fas fa-angle-left back-link'></i>
+          {' '}all dates
+          </Link>
         <h2>
           <Moment format='ddd, MMMM Do YYYY'>{date.date}</Moment>
         </h2>

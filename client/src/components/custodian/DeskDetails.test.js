@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { shallow, mount, ReactWrapper } from 'enzyme';
 
 import DeskDetails from './DeskDetails';
@@ -28,7 +29,10 @@ const setup = (props = {}) => {
  */
 const setupMount = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
-  return mount(<DeskDetails {...setupProps} />);
+  return mount(
+    <Router>
+      <DeskDetails {...setupProps} />
+    </Router>);
 };
 
 describe('DeskDetails component', () => {
