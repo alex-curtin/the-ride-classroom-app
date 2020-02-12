@@ -1,14 +1,9 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import DateDetails from './DateDetails';
 import { findByTestAttr, datesProp, studentsProp, roomsProp } from '../../testUtils.js';
-
-/**
- * Creates a ShallowWrapper for DateDetails component.
- * @param {object} props - props for this setup.
- * @returns {ShallowWrapper}
- */
 
 const defaultProps = {
   date: datesProp[0],
@@ -16,9 +11,28 @@ const defaultProps = {
   room: roomsProp[0]
 };
 
+/**
+ * Creates a ShallowWrapper for DateDetails component.
+ * @param {object} props - props for this setup.
+ * @returns {ShallowWrapper}
+ */
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
   return shallow(<DateDetails {...setupProps} />);
+};
+
+/**
+ * Mounts component, for testing lifecycle methods.
+ * @param {object} props - props for this setup.
+ * @returns {ReactWrapper}
+ */
+const setupMount = (props = {}) => {
+  const setupProps = { ...defaultProps, ...props };
+  return mount(
+    <Router>
+      <DateDetails {...setupProps} />
+    </Router>
+  );
 };
 
 test('renders without error', () => {
@@ -55,9 +69,9 @@ describe('load data functions', () => {
 
     test('should run if `room` prop is null', () => {
       const loadRoomsMock = jest.fn();
-      const setupProps = { room: null, loadRooms: loadRoomsMock };
-      const props = { ...defaultProps, ...setupProps };
-      const wrapper = mount(<DateDetails {...props} />);
+      const props = { room: null, loadRooms: loadRoomsMock };
+
+      const wrapper = setupMount(props);
 
       const loadRoomsCallCount = loadRoomsMock.mock.calls.length;
       expect(loadRoomsCallCount).toBe(1);
@@ -66,9 +80,9 @@ describe('load data functions', () => {
 
     test('should not run if `room` props is not null', () => {
       const loadRoomsMock = jest.fn();
-      const setupProps = { loadRooms: loadRoomsMock };
-      const props = { ...defaultProps, ...setupProps };
-      const wrapper = mount(<DateDetails {...props} />);
+      const props = { loadRooms: loadRoomsMock };
+
+      const wrapper = setupMount(props);
 
       const loadRoomsCallCount = loadRoomsMock.mock.calls.length;
       expect(loadRoomsCallCount).toBe(0);
@@ -79,9 +93,9 @@ describe('load data functions', () => {
   describe('loadStudents', () => {
     test('should run if `students` prop is empty', () => {
       const loadStudentsMock = jest.fn();
-      const setupProps = { students: [], loadStudents: loadStudentsMock };
-      const props = { ...defaultProps, ...setupProps };
-      const wrapper = mount(<DateDetails {...props} />);
+      const props = { students: [], loadStudents: loadStudentsMock };
+
+      const wrapper = setupMount(props);
 
       const loadStudentsCallCount = loadStudentsMock.mock.calls.length;
       expect(loadStudentsCallCount).toBe(1);
@@ -90,9 +104,9 @@ describe('load data functions', () => {
 
     test('should not run id `students` prop is not empty', () => {
       const loadStudentsMock = jest.fn();
-      const setupProps = { loadStudents: loadStudentsMock };
-      const props = { ...defaultProps, ...setupProps };
-      const wrapper = mount(<DateDetails {...props} />);
+      const props = { loadStudents: loadStudentsMock };
+
+      const wrapper = setupMount(props);
 
       const loadStudentsCallCount = loadStudentsMock.mock.calls.length;
       expect(loadStudentsCallCount).toBe(0);

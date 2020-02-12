@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Moment from 'react-moment';
 
+import DeskItem from './DeskItem';
 import { getStudentByPositionId, getAbsentStudents } from '../../services/helpers';
 
 const DateDetails = ({ date, students, room, loadRooms, loadStudents }) => {
@@ -15,7 +16,9 @@ const DateDetails = ({ date, students, room, loadRooms, loadStudents }) => {
 
   const renderDesks = () => (room.positions.map(position => (
     <div data-test='desk-item' key={position}>
-
+      <DeskItem
+        student={getStudentByPositionId(position, date, students)}
+      />
     </div>
   )));
 
