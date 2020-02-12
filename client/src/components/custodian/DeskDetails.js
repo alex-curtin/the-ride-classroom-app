@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Moment from 'react-moment';
 
 import DeskRepairs from './DeskRepairs';
+import DeskHistory from './DeskHistory';
 
 const DeskDetails = ({
   desk, dates,
@@ -35,6 +36,7 @@ const DeskDetails = ({
           <Moment format='MM/DD/YYYY'>{desk.purchased}</Moment>
         </p>
         {desk.repairs.length > 0 && (<DeskRepairs repairs={desk.repairs} />)}
+        <DeskHistory dates={dates} desk={desk} students={students} />
         <hr />
       </div>
     )
