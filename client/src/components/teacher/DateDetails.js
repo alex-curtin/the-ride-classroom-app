@@ -25,7 +25,9 @@ const DateDetails = ({ date, students, room, loadRooms, loadStudents }) => {
 
   const renderAbsentStudents = () => (getAbsentStudents(date, students).map(student => (
     <p key={student.id} data-test='absent-student'>
-      {student.bio.givenName} {student.bio.familyName}
+      <Link to={`/teacher/students/${student.id}`}>
+        {student.bio.givenName} {student.bio.familyName}
+      </Link>
     </p>
   )));
 
