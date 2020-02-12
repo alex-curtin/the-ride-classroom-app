@@ -6,7 +6,7 @@ const Desks = ({ desks, loadDesks }) => {
     if (desks.length === 0) {
       loadDesks();
     }
-  }, [loadDesks])
+  }, [loadDesks, desks])
 
   if (desks.length > 0) {
     return (

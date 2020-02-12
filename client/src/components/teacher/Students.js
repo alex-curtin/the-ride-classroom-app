@@ -12,7 +12,7 @@ const Students = ({ students, loadStudents }) => {
     if (students.length === 0) {
       loadStudents();
     }
-  }, [loadStudents]);
+  }, [loadStudents, students]);
 
   if (students.length > 0) {
     return (
