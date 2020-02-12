@@ -6,6 +6,7 @@ import Students from './components/teacher/Students';
 import StudentDetails from './components/teacher/StudentDetails';
 import Dates from './components/teacher/Dates';
 import DateDetails from './components/teacher/DateDetails';
+import Desks from './components/custodian/Desks';
 import { getStudents, getDates, getDesks, getRooms } from './services/api-helper';
 import './App.css';
 
@@ -110,6 +111,16 @@ class App extends Component {
                   date={dates.find(date => date.date === parseInt(match.params.date))}
                   room={rooms[0]}
                   students={students}
+                />
+              )}
+            />
+
+            <Route
+              exact path='/custodian/desks'
+              render={() => (
+                <Desks
+                  desks={desks}
+                  loadDesks={this.loadDesks}
                 />
               )}
             />
