@@ -12,7 +12,8 @@ import { findByTestAttr } from './testUtils.js';
  * @returns {ShallowWrapper}
  */
 const setup = (state = {}) => {
-  const wrapper = shallow(<App />);
+  const props = { history: [] }
+  const wrapper = shallow(<App.WrappedComponent {...props} />);
   wrapper.setState(state);
   return wrapper;
 }
@@ -117,10 +118,21 @@ describe('App component', () => {
     })
   });
 
-  test('toggleUser updates `user` state', () => {
-    const wrapper = setup({ user: 'custodian' });
-    wrapper.instance().toggleUser();
-    const newUserState = wrapper.instance().state.user;
-    expect(newUserState).toBe('teacher');
+  describe('toggleUser', () => {
+    test('should update `user` state', () => {
+      const wrapper = setup({ user: 'custodian' });
+      wrapper.instance().toggleUser();
+
+      const newUserState = wrapper.instance().state.user;
+      expect(newUserState).toBe('teacher');
+    });
+
+    test('should redirect user', () => {
+      const wrapper = setup({ user: 'custodian' });
+      wrapper.instance().toggleUser();
+
+      const historyProp = wrapper.instance().props.history;
+      expect(historyProp.length).toBe(1);
+    })
   });
 });

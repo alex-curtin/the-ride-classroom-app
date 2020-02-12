@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 
 import Navbar from './components/layout/Navbar';
 import Students from './components/teacher/Students';
@@ -68,6 +68,7 @@ class App extends Component {
       newUser = 'teacher';
     };
     this.setState({ user: newUser });
+    this.props.history.push(`/${newUser}`);
   }
 
   render() {
@@ -152,4 +153,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
