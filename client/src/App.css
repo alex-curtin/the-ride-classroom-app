@@ -62,10 +62,34 @@ td {
 
 .list-item {
   background: #f4f4f4;
-  padding: .3rem 1rem;
+  padding: .8rem 1rem;
   margin-bottom: .05rem;
   width: 60%;
   max-width: 300px;
+  cursor: pointer;
+}
+
+.list-item:hover {
+  background: #eee;
+}
+
+.list-item p {
+  margin: 0
+}
+
+.btn {
+  padding: .5rem 1rem;
+  background: #eee;
+  border: none;
+  font-weight: bold;
+  font-size: .8rem;
+  border-radius: 2px;
+  box-shadow: 2px 2px 8px -4px #000;
+  cursor: pointer;
+}
+
+.bt:active {
+  box-shadow: 2px 2px 2px -4px #000;
 }
 
 /**** NAV ****/
@@ -115,14 +139,6 @@ nav li {
   max-width: 300px;
 }
 
-.list-item:hover {
-  background: #eee;
-}
-
-.student-item p {
-  margin: 0;
-}
-
 /**** STUDENT DETAILS ****/
 .component-student-details p {
   margin: .5rem 0;
@@ -152,4 +168,10 @@ nav li {
 .desk {
   padding: 1rem;
   border: 2px solid black;
+}
+
+/**** DESKS  ****/
+.component-desks .list-item {
+  width: 100%;
+  max-width: 500px;
 }

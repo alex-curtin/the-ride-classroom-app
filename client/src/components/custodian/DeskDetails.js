@@ -44,7 +44,6 @@ const DeskDetails = ({
         {desk.repairs.length > 0 && (<DeskRepairs repairs={desk.repairs} />)}
         <h4>Desk History</h4>
         <DeskHistory dates={dates} desk={desk} students={students} />
-        <hr />
       </div>
     )
   } else return (

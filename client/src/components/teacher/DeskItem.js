@@ -5,13 +5,11 @@ const Desk = ({ student }) => {
   if (student) {
     const { id, bio: { givenName, familyName } } = student;
     return (
-      <div className='desk'>
-        <Link to={`/teacher/students/${id}`}>
-          <p data-test='student-name'>{givenName} {familyName}</p>
-        </Link>
-      </div>
+      <Link to={`/teacher/students/${id}`}>
+        <p data-test='student-name'>{givenName} {familyName}</p>
+      </Link>
     )
-  } else return (<div data-test='empty-desk' className='desk'></div>)
+  } else return (<div data-test='empty-desk'></div>)
 };
 
 export default Desk;

@@ -12,10 +12,11 @@ const Dates = ({ dates, loadDates }) => {
   if (dates.length > 0) {
     return (
       <div data-test='component-dates'>
-        <h2>Dates</h2>
+        <h2 className='page-headline'>Dates</h2>
+        <h4>click on a date to get details</h4>
         <ul>
           {dates.map(date => (
-            <li key={date.date} data-test='date-item'>
+            <li key={date.date} data-test='date-item' className='list-item'>
               <Link to={`/teacher/dates/${date.date}`}>
                 <Moment format='ddd, MMMM Do YYYY' date={date.date} />
               </Link>

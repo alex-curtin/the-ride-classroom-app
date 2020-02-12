@@ -10,7 +10,7 @@ const Desks = ({ desks, loadDesks }) => {
 
   if (desks.length > 0) {
     return (
-      <div data-test='component-desks'>
+      <div data-test='component-desks' className='component-desks'>
         <h2 className='page-headline'>Desks</h2>
         {desks.map(desk => (
           <div className='list-item' key={desk.id} data-test='desk-item'>

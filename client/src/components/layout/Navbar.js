@@ -40,7 +40,7 @@ const Navbar = ({ user, toggleUser }) => {
 
       {user === 'teacher' ? teacherLinks : custodianLinks}
 
-      <button onClick={toggleUser} data-test='toggle-user-button'>
+      <button onClick={toggleUser} data-test='toggle-user-button' className='btn'>
         Switch to {user === 'teacher' ? 'Custodian' : 'Teacher'}
       </button>
     </nav>

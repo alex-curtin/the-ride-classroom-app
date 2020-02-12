@@ -16,7 +16,7 @@ const DateDetails = ({ date, students, room, loadRooms, loadStudents }) => {
   }, [loadRooms, loadStudents]);
 
   const renderDesks = () => (room.positions.map(position => (
-    <div data-test='desk-item' key={position}>
+    <div data-test='desk-item' key={position} className='desk'>
       <DeskItem
         student={getStudentByPositionId(position, date, students)}
       />
@@ -38,10 +38,11 @@ const DateDetails = ({ date, students, room, loadRooms, loadStudents }) => {
           <i className='fas fa-angle-left back-link'></i>
           {' '}all dates
           </Link>
-        <h2>
+        <h2 className='page-headline'>
           <Moment format='ddd, MMMM Do YYYY'>{date.date}</Moment>
         </h2>
 
+        <h4>classroom</h4>
         <div className='desks'>
           {renderDesks()}
         </div>
