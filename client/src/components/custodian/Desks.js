@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Desks = ({ desks, loadDesks }) => {
   useEffect(() => {
@@ -12,9 +13,13 @@ const Desks = ({ desks, loadDesks }) => {
       <div data-test='component-desks'>
         <h2>Desks</h2>
         {desks.map(desk => (
-          <div data-test='desk-item' key={desk.id}>
-
-          </div>
+          <Link
+            to={`/custodian/desks/${desk.id}`}
+            data-test='desk-item'
+            key={desk.id}
+          >
+            <p>Desk ID: {desk.id}</p>
+          </Link>
         ))}
       </div>
     )

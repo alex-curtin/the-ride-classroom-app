@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import { StaticRouter as Router } from 'react-router-dom';
 
 import Desks from './Desks';
 import { findByTestAttr, desksProp } from '../../testUtils.js';
@@ -14,6 +15,20 @@ const defaultProps = { desks: desksProp };
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props };
   return shallow(<Desks {...setupProps} />);
+};
+
+/**
+ * Mounts component, for testing lifecycle methods.
+ * @param {object} props - props for this setup.
+ * @returns {ReactWrapper}
+ */
+const setupMount = (props = {}) => {
+  const setupProps = { ...defaultProps, ...props };
+  return mount(
+    <Router>
+      <Desks {...setupProps} />
+    </Router>
+  );
 };
 
 describe('Desks component', () => {
@@ -38,9 +53,9 @@ describe('Desks component', () => {
   describe('loadDesks function', () => {
     test('runs if desks prop is empty', () => {
       const loadDesksMock = jest.fn();
-      const setupProps = { desks: [], loadDesks: loadDesksMock };
-      const props = { ...defaultProps, ...setupProps };
-      const wrapper = mount(<Desks {...props} />);
+      const props = { desks: [], loadDesks: loadDesksMock };
+
+      const wrapper = setupMount(props);
 
       const loadDesksCallCount = loadDesksMock.mock.calls.length;
       expect(loadDesksCallCount).toBe(1);
@@ -48,12 +63,12 @@ describe('Desks component', () => {
 
     test('does not run if desks prop is not empty', () => {
       const loadDesksMock = jest.fn();
-      const setupProps = { loadDesks: loadDesksMock };
-      const props = { ...defaultProps, ...setupProps };
-      const wrapper = mount(<Desks {...props} />);
+      const props = { loadDesks: loadDesksMock };
+
+      const wrapper = setupMount(props);
 
       const loadDesksCallCount = loadDesksMock.mock.calls.length;
-      expect(loadDesksCallCount).toBe(0);
+      expect(loadDesksCallCount).toBe(1);
     })
 
   });
