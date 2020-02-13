@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 
 import Navbar from './components/layout/Navbar';
+import TeacherLanding from './components/teacher/TeacherLanding';
 import Students from './components/teacher/Students';
 import StudentDetails from './components/teacher/StudentDetails';
 import Dates from './components/teacher/Dates';
@@ -79,6 +80,12 @@ class App extends Component {
         <Navbar user={user} toggleUser={this.toggleUser} />
         <section className="main-content-container">
           <Switch>
+
+            <Route
+              exact path='/teacher'
+              render={TeacherLanding}
+            />
+
             <Route
               exact path='/teacher/students'
               render={() => (
