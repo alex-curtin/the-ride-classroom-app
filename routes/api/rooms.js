@@ -6,6 +6,15 @@ let rawData = fs.readFileSync('./data/roomData.json');
 let rooms = JSON.parse(rawData);
 
 /**
+ * Route handler for getting all rooms.
+ * @param {object} req - request.
+ * @param {object} res - response.
+ */
+const roomRouteHandler = (req, res) => {
+  res.json(rooms);
+}
+
+/**
  * @route GET api/rooms
  * @description Get all rooms
  */
@@ -13,12 +22,4 @@ router.get('/', (req, res) => {
   res.json(rooms)
 });
 
-/**
- * @route GET api/rooms/:room_id
- */
-router.get('/:room_id', (req, res) => {
-  const room = rooms.find(el => el.roomId === req.params.room_id);
-  res.json(room);
-})
-
-module.exports = router;
+module.exports = { router, roomRouteHandler };

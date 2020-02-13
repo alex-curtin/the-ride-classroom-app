@@ -6,20 +6,18 @@ let rawData = fs.readFileSync('./data/deskData.json');
 let desks = JSON.parse(rawData);
 
 /**
+ * Route handler for getting all desks.
+ * @param {object} req - request.
+ * @param {object} res - response.
+ */
+const desksRouteHandler = (req, res) => {
+  res.json(desks)
+}
+
+/**
  * @route GET api/desks
  * @description Get all desks
  */
-router.get('/', (req, res) => {
-  res.json(desks)
-});
+router.get('/', desksRouteHandler);
 
-/**
- * @route GET api/desk/:desk_id
- * @description Get one desk by id
- */
-router.get('/:desk_id', (req, res) => {
-  const desk = desks.find(el => el.id === req.params.desk_id);
-  res.json(desk);
-})
-
-module.exports = router;
+module.exports = { router, desksRouteHandler };

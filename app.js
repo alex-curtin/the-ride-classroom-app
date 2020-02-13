@@ -2,10 +2,10 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
-const datesRouter = require('./routes/api/dates');
-const studentsRouter = require('./routes/api/students');
-const desksRouter = require('./routes/api/desks');
-const roomsRouter = require('./routes/api/rooms');
+const datesRouter = require('./routes/api/dates').router;
+const studentsRouter = require('./routes/api/students').router;
+const desksRouter = require('./routes/api/desks').router;
+const roomsRouter = require('./routes/api/rooms').router;
 
 app.use(cors());
 
