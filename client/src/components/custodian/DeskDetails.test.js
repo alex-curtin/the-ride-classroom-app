@@ -3,7 +3,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { shallow, mount, ReactWrapper } from 'enzyme';
 
 import DeskDetails from './DeskDetails';
-import { findByTestAttr, desksProp, datesProp, studentsProp, roomsProp } from '../../testUtils.js';
+import { findByTestAttr } from '../../testUtils';
+import { desksProp, datesProp, studentsProp, roomsProp } from '../../testUtils/mock-props';
 
 const defaultProps = {
   dates: datesProp,

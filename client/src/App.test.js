@@ -4,9 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import moxios from 'moxios';
 
 import App from './App';
-import DeskDetails from './components/custodian/DeskDetails';
-import DateDetails from './components/teacher/DateDetails';
-import { findByTestAttr } from './testUtils.js';
+import { findByTestAttr } from './testUtils';
 
 /**
  * Creates a ShallowWrapper for App component

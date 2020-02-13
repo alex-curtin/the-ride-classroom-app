@@ -2,7 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import DeskHistory from './DeskHistory';
-import { findByTestAttr, desksProp, datesProp, studentsProp, roomsProp } from '../../testUtils.js';
+import { findByTestAttr } from '../../testUtils';
+import { desksProp, datesProp, studentsProp, roomsProp } from '../../testUtils/mock-props';
 
 const defaultProps = {
   dates: datesProp,

@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import CustodianLanding from './CustodianLanding';
-import { findByTestAttr } from '../../testUtils.js';
+import { findByTestAttr } from '../../testUtils';
 
 /**
  * Creates a ShallowWrapper for CustodianLanding component.

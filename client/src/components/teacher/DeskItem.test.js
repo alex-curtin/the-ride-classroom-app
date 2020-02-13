@@ -2,7 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import DeskItem from './DeskItem';
-import { findByTestAttr, studentsProp } from '../../testUtils.js';
+import { findByTestAttr } from '../../testUtils';
+import { studentsProp } from '../../testUtils/mock-props';
 
 const defaultProps = { student: studentsProp[0] }
 

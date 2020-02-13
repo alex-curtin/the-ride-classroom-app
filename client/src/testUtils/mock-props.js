@@ -1,13 +1,3 @@
-/**
- * Return node(s) with the given data-test attribute.
- * @param {ShallowWrapper} wrapper - Enzyme shallow wrapper. 
- * @param {String} val - Value of the data-test attribute to find.
- * @returns {ShallowWrapper} 
- */
-export const findByTestAttr = (wrapper, val) => {
-  return wrapper.find(`[data-test='${val}']`);
-}
-
 export const studentsProp = [
   {
     id: "3b0d7462-8ba1-4a5c-8a64-7721f7a9947c",

@@ -2,7 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import DeskRepairs from './DeskRepairs';
-import { findByTestAttr, desksProp } from '../../testUtils.js';
+import { findByTestAttr } from '../../testUtils';
+import { desksProp } from '../../testUtils/mock-props';
 
 const defaultProps = {
   repairs: desksProp[0].repairs

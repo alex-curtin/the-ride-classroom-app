@@ -3,7 +3,8 @@ import { shallow, mount } from 'enzyme';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import Students from './Students';
-import { findByTestAttr, studentsProp } from '../../testUtils.js';
+import { findByTestAttr } from '../../testUtils';
+import { studentsProp } from '../../testUtils/mock-props';
 
 const defaultProps = {
   students: studentsProp

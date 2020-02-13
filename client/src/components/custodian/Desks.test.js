@@ -3,7 +3,8 @@ import { shallow, mount } from 'enzyme';
 import { StaticRouter as Router } from 'react-router-dom';
 
 import Desks from './Desks';
-import { findByTestAttr, desksProp } from '../../testUtils.js';
+import { findByTestAttr } from '../../testUtils';
+import { desksProp } from '../../testUtils/mock-props';
 
 const defaultProps = { desks: desksProp };
 

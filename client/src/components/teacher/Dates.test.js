@@ -3,7 +3,8 @@ import { shallow, mount } from 'enzyme';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import Dates from './Dates';
-import { findByTestAttr, datesProp } from '../../testUtils.js';
+import { findByTestAttr } from '../../testUtils';
+import { datesProp } from '../../testUtils/mock-props';
 
 const defaultProps = {
   dates: datesProp

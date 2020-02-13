@@ -3,31 +3,12 @@ import { shallow, mount } from 'enzyme';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import StudentDetails from './StudentDetails';
-import { findByTestAttr } from '../../testUtils.js';
+import { findByTestAttr } from '../../testUtils';
+import { studentsProp } from '../../testUtils/mock-props';
 
 const defaultProps = {
-  student: {
-    id: "3b0d7462-8ba1-4a5c-8a64-7721f7a9947c",
-    bio: {
-      givenName: "Aisling",
-      familyName: "Worthington",
-      nickName: "Aisey",
-      email: "aisey@email.me",
-      age: 15,
-      grade: 10
-    },
-    history: {
-      absences: 5,
-      gpa: 3.7
-    },
-    grades: {
-      project1: 92,
-      project2: 88,
-      project3: 91,
-      project4: "n/a"
-    }
-  }
-}
+  student: studentsProp[0]
+};
 
 /**
  * Creates a ShallowWrapper for StudentDetails component
