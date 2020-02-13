@@ -10,6 +10,9 @@ React app with Node/Express backend. Tested with Jest & Enzyme.
 git clone https://github.com/alex-curtin/the-ride-classroom-app.git
 cd the-ride-classroom-app
 npm install
+cd client
+npm install
+cd ..
 ```
 
 ## Start  
