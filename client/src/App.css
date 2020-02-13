@@ -32,6 +32,8 @@ a {
 table {
   border-spacing: 0 2px;
   margin-bottom: 2rem;
+  width: 100%;
+  max-width: 500px;
 }
 
 thead {
@@ -154,11 +156,6 @@ nav li {
 
 .component-student-details span {
   font-weight: 600;
-}
-
-.component-student-details table {
-  width: 100%;
-  max-width: 470px;
 }
 
 /**** DATE DETAILS ****/
