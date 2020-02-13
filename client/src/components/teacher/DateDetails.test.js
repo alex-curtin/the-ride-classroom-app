@@ -65,6 +65,12 @@ describe('DateDetails component', () => {
     expect(absentStudents.length).not.toBe(0);
   });
 
+  test('should not render absent students if no students were absent', () => {
+    const wrapper = setup({ date: datesProp[1] });
+    const absentStudents = findByTestAttr(wrapper, 'absent-student');
+    expect(absentStudents.length).toBe(0);
+  })
+
   describe('load data functions', () => {
     describe('loadRooms', () => {
 

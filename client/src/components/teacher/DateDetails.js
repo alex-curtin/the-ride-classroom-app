@@ -37,13 +37,23 @@ const DateDetails = ({ date, students, room, loadRooms, loadStudents }) => {
    * Renders list of absent students.
    * @returns {JSX.Element}
    */
-  const renderAbsentStudents = () => (getAbsentStudents(date, students).map(student => (
-    <p key={student.id} data-test='absent-student'>
-      <Link to={`/teacher/students/${student.id}`}>
-        {student.bio.givenName} {student.bio.familyName}
-      </Link>
-    </p>
-  )));
+  const renderAbsentStudents = () => {
+    const absentStudents = getAbsentStudents(date, students);
+    if (absentStudents.length > 0) {
+      return (
+        <div>
+          <h3>Absent Students</h3>
+          {absentStudents.map(student => (
+            <p key={student.id} data-test='absent-student'>
+              <Link to={`/teacher/students/${student.id}`}>
+                {student.bio.givenName} {student.bio.familyName}
+              </Link>
+            </p>
+          ))}
+        </div>
+      )
+    }
+  };
 
   if (date && room && students.length > 0) {
     return (
@@ -61,7 +71,6 @@ const DateDetails = ({ date, students, room, loadRooms, loadStudents }) => {
           {renderDesks()}
         </div>
 
-        <h3>Absent Students</h3>
         {renderAbsentStudents()}
 
       </div>

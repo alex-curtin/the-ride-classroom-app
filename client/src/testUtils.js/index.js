@@ -191,7 +191,124 @@ export const datesProp = [
         positionId: "n/a"
       }
     ]
-  }
+  },
+  {
+    date: 1577941200000,
+    students: [
+      {
+        entryId: "76113e09-cd33-4899-bdaf-b4d81f16877c",
+        studentId: "a9ca95d8-47ba-4457-974e-679247d79a70",
+        absent: false,
+        tardy: false,
+        roomId: "6490847d-a3db-44ba-90eb-8832bf938e69",
+        positionId: "66835c79-3eb0-4abc-b2fc-5ef2e72f13bb"
+      },
+      {
+        entryId: "97242e8f-c824-475c-afe4-e8322f62afbd",
+        studentId: "b41c21a8-5487-4063-a976-b799d485229d",
+        absent: false,
+        tardy: true,
+        roomId: "6490847d-a3db-44ba-90eb-8832bf938e69",
+        positionId: "eeb216da-fe27-4196-8013-ef79c404300a"
+      },
+      {
+        entryId: "6c03a648-6264-4464-9a77-538e9b6402a9",
+        studentId: "c5e6ba4a-2bfc-45b8-ad2d-fdab394e8feb",
+        absent: false,
+        tardy: false,
+        roomId: "6490847d-a3db-44ba-90eb-8832bf938e69",
+        positionId: "e64374f6-da46-42ef-a30e-a1ddfe147938"
+      },
+      {
+        entryId: "2aeb6045-4d1f-4c78-b44a-db5e25f2ba20",
+        studentId: "3b0d7462-8ba1-4a5c-8a64-7721f7a9947c",
+        absent: false,
+        tardy: false,
+        roomId: "6490847d-a3db-44ba-90eb-8832bf938e69",
+        positionId: "3670f011-ddfb-43c0-86a9-679cda2b79ae"
+      },
+      {
+        entryId: "de75b99f-fb0b-4afe-898a-12c7d20d8ffd",
+        studentId: "91abf0a1-717c-4123-bdcb-d5215a6ac570",
+        absent: false,
+        tardy: false,
+        roomId: "6490847d-a3db-44ba-90eb-8832bf938e69",
+        positionId: "e2cd3e2b-a020-4b22-85b8-3ef195fe6e90"
+      }
+    ],
+    desks: [
+      {
+        entryId: "709c8aaa-12aa-49d6-bd91-0b2d078464e1",
+        deskId: "a25bd008-5f78-4ae6-b2a7-6b453f2e44f6",
+        status: "In Use",
+        roomId: "6490847d-a3db-44ba-90eb-8832bf938e69",
+        positionId: "66835c79-3eb0-4abc-b2fc-5ef2e72f13bb"
+      },
+      {
+        entryId: "b64ab5c2-873a-4353-a234-25af54d89264",
+        deskId: "68557a9c-96cb-4a00-81f9-41318549ab2a",
+        status: "In Use",
+        roomId: "6490847d-a3db-44ba-90eb-8832bf938e69",
+        positionId: "29b510df-bafc-43d9-b3d2-c0b089b51e9a"
+      },
+      {
+        entryId: "0bbe6384-0764-4cf8-b4e1-17968aa3c2c3",
+        deskId: "e8c75fe7-89ec-4178-a6e8-bddcb4afac96",
+        status: "In Use",
+        roomId: "6490847d-a3db-44ba-90eb-8832bf938e69",
+        positionId: "e64374f6-da46-42ef-a30e-a1ddfe147938"
+      },
+      {
+        entryId: "e4ce14a3-be80-488c-8f8a-74a9b6d265d8",
+        deskId: "7fd34fbf-fee9-4754-8ac9-15183394c705",
+        status: "In Use",
+        roomId: "6490847d-a3db-44ba-90eb-8832bf938e69",
+        positionId: "7a758d63-df4c-4b86-b93a-99a9c2ad68e0"
+      },
+      {
+        entryId: "f985936e-594e-4f34-bf36-d5d50a4bc1ae",
+        deskId: "a1a33b92-8b46-4e80-b8a1-5e45e8d7aa2e",
+        status: "In Use",
+        roomId: "6490847d-a3db-44ba-90eb-8832bf938e69",
+        positionId: "041f9dce-7b1c-4c65-bc06-422c74a358c3"
+      },
+      {
+        entryId: "d2a47483-0dd5-46b9-a2ca-462cb2422a4f",
+        deskId: "14f34532-ba50-42a5-99fd-162c4c79fe06",
+        status: "In Use",
+        roomId: "6490847d-a3db-44ba-90eb-8832bf938e69",
+        positionId: "e2cd3e2b-a020-4b22-85b8-3ef195fe6e90"
+      },
+      {
+        entryId: "007c1381-d6d6-4cfc-985a-8b3418a9fc31",
+        deskId: "5316cf62-3218-4a97-8c2e-8e80c9f62438",
+        status: "In Use",
+        roomId: "6490847d-a3db-44ba-90eb-8832bf938e69",
+        positionId: "3670f011-ddfb-43c0-86a9-679cda2b79ae"
+      },
+      {
+        entryId: "a66c3d9c-db87-4f70-ab2f-ee86e53431ba",
+        deskId: "3a950cd7-f347-4c17-8409-3fcc5459b13c",
+        status: "Standby",
+        roomId: "868e2942-eecc-4e99-b1f2-b21eca0e6f7f",
+        positionId: "n/a"
+      },
+      {
+        entryId: "930cf2ac-5ede-46ce-83b3-a1b493e1b4c8",
+        deskId: "de242095-154f-44a8-8e1f-98e391838d94",
+        status: "In Use",
+        roomId: "6490847d-a3db-44ba-90eb-8832bf938e69",
+        positionId: "eeb216da-fe27-4196-8013-ef79c404300a"
+      },
+      {
+        entryId: "068bd441-81a8-49cb-9ed0-96e7ca0799ec",
+        deskId: "d9eef97d-d043-4717-9889-dca80882767e",
+        status: "Standby",
+        roomId: "868e2942-eecc-4e99-b1f2-b21eca0e6f7f",
+        positionId: "n/a"
+      }
+    ]
+  },
 ];
 
 export const roomsProp = [
