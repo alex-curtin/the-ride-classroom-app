@@ -3,9 +3,9 @@ const fs = require('fs');
 
 let rawData = fs.readFileSync('./data/roomData.json');
 let rooms = JSON.parse(rawData);
-const { roomRouteHandler } = require('./rooms');
+const { roomsRouteHandler } = require('./rooms');
 
-describe('roomRouteHandler', () => {
+describe('roomsRouteHandler', () => {
   const req = httpMocks.createRequest({
     method: 'GET',
     url: '/'
@@ -13,7 +13,7 @@ describe('roomRouteHandler', () => {
   const res = httpMocks.createResponse();
 
   test('should get all desks and return status 200', () => {
-    roomRouteHandler(req, res);
+    roomsRouteHandler(req, res);
     const data = res._getJSONData();
 
     expect(res.statusCode).toBe(200);

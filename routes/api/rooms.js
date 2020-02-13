@@ -10,7 +10,7 @@ let rooms = JSON.parse(rawData);
  * @param {object} req - request.
  * @param {object} res - response.
  */
-const roomRouteHandler = (req, res) => {
+const roomsRouteHandler = (req, res) => {
   res.json(rooms);
 }
 
@@ -18,8 +18,6 @@ const roomRouteHandler = (req, res) => {
  * @route GET api/rooms
  * @description Get all rooms
  */
-router.get('/', (req, res) => {
-  res.json(rooms)
-});
+router.get('/', roomsRouteHandler);
 
-module.exports = { router, roomRouteHandler };
+module.exports = { router, roomsRouteHandler };
