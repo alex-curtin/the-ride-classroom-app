@@ -7,6 +7,7 @@ import Students from './components/teacher/Students';
 import StudentDetails from './components/teacher/StudentDetails';
 import Dates from './components/teacher/Dates';
 import DateDetails from './components/teacher/DateDetails';
+import CustodianLanding from './components/custodian/CustodianLanding';
 import Desks from './components/custodian/Desks';
 import DeskDetails from './components/custodian/DeskDetails';
 import { getStudents, getDates, getDesks, getRooms } from './services/api-helper';
@@ -125,6 +126,11 @@ class App extends Component {
                   loadStudents={this.loadStudents}
                 />
               )}
+            />
+
+            <Route
+              exact path='/custodian'
+              render={CustodianLanding}
             />
 
             <Route

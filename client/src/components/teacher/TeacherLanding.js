@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const TeacherLanding = () => {
   return (
-    <div data-test='component-teacher-landing'>
+    <div data-test='component-teacher-landing' className='landing-page'>
       <h2 className='page-headline'>Welcome Teacher!</h2>
       <div>
         Use this app to pull up information by{' '}
