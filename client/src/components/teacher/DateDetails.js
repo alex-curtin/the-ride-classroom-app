@@ -11,7 +11,7 @@ import { getStudentByPositionId, getAbsentStudents } from '../../services/helper
  * @param {object} props - React props.
  * @returns {JSX.Element} - Rendered component.
  */
-const DateDetails = ({ date, students, room, loadRooms, loadStudents }) => {
+const DateDetails = ({ date, students, room, loadRooms, loadStudents, loadDates }) => {
   useEffect(() => {
     if (!room) {
       loadRooms();
@@ -19,7 +19,10 @@ const DateDetails = ({ date, students, room, loadRooms, loadStudents }) => {
     if (students.length === 0) {
       loadStudents();
     }
-  }, [loadRooms, loadStudents]);
+    if (!date) {
+      loadDates();
+    }
+  }, [loadRooms, loadStudents, loadDates, room, students, date]);
 
   /**
    * Renders a DeskItem for each position in room prop.

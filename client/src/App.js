@@ -128,6 +128,7 @@ class App extends Component {
                   students={students}
                   loadRooms={this.loadRooms}
                   loadStudents={this.loadStudents}
+                  loadDates={this.loadDates}
                 />
               )}
             />

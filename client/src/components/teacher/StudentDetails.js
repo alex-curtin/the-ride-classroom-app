@@ -16,7 +16,6 @@ const StudentDetails = ({ student, loadStudents }) => {
 
   if (student) {
     const {
-      id,
       bio: {
         givenName,
         familyName,

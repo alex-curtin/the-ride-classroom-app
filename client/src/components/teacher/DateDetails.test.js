@@ -110,7 +110,7 @@ describe('DateDetails component', () => {
         wrapper.unmount();
       });
 
-      test('should not run id `students` prop is not empty', () => {
+      test('should not run if `students` prop is not empty', () => {
         const loadStudentsMock = jest.fn();
         const props = { loadStudents: loadStudentsMock };
 
@@ -118,6 +118,30 @@ describe('DateDetails component', () => {
 
         const loadStudentsCallCount = loadStudentsMock.mock.calls.length;
         expect(loadStudentsCallCount).toBe(0);
+        wrapper.unmount();
+      });
+    });
+
+    describe('loadDates', () => {
+      test('should run if `date` prop is null', () => {
+        const loadDatesMock = jest.fn();
+        const props = { date: null, loadDates: loadDatesMock };
+
+        const wrapper = setupMount(props);
+
+        const loadDatesCallCount = loadDatesMock.mock.calls.length;
+        expect(loadDatesCallCount).toBe(1);
+        wrapper.unmount();
+      });
+
+      test('should not run if `date` prop is not null', () => {
+        const loadDatesMock = jest.fn();
+        const props = { loadDates: loadDatesMock };
+
+        const wrapper = setupMount(props);
+
+        const loadDatesCallCount = loadDatesMock.mock.calls.length;
+        expect(loadDatesCallCount).toBe(0);
         wrapper.unmount();
       });
     });
