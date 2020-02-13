@@ -130,6 +130,12 @@ nav li {
   font-size: 1.2rem;
 }
 
+/**** LANDING ****/
+.landing-page a {
+  font-weight: bold;
+  color: #333;
+}
+
 /**** STUDENTS *****/
 .student-item {
   background: #f4f4f4;

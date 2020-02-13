@@ -5,6 +5,12 @@ import Moment from 'react-moment';
 import DeskItem from './DeskItem';
 import { getStudentByPositionId, getAbsentStudents } from '../../services/helpers';
 
+/**
+ * Functional React component for displaying classroom layout for a specific date.
+ * @user Teacher
+ * @param {object} props - React props.
+ * @returns {JSX.Element} - Rendered component.
+ */
 const DateDetails = ({ date, students, room, loadRooms, loadStudents }) => {
   useEffect(() => {
     if (!room) {
@@ -15,6 +21,10 @@ const DateDetails = ({ date, students, room, loadRooms, loadStudents }) => {
     }
   }, [loadRooms, loadStudents]);
 
+  /**
+   * Renders a DeskItem for each position in room prop.
+   * @returns {JSX.Element}
+   */
   const renderDesks = () => (room.positions.map(position => (
     <div data-test='desk-item' key={position} className='desk'>
       <DeskItem
@@ -23,6 +33,10 @@ const DateDetails = ({ date, students, room, loadRooms, loadStudents }) => {
     </div>
   )));
 
+  /**
+   * Renders list of absent students.
+   * @returns {JSX.Element}
+   */
   const renderAbsentStudents = () => (getAbsentStudents(date, students).map(student => (
     <p key={student.id} data-test='absent-student'>
       <Link to={`/teacher/students/${student.id}`}>

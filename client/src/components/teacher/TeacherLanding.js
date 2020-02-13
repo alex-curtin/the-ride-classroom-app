@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+/**
+ * Functional React component for teacher landing page.
+ * @user Teacher
+ * @returns {JSX.Element} - Rendered component.
+ */
 const TeacherLanding = () => {
   return (
     <div data-test='component-teacher-landing' className='landing-page'>

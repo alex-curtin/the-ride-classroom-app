@@ -5,6 +5,12 @@ import Moment from 'react-moment';
 import DeskRepairs from './DeskRepairs';
 import DeskHistory from './DeskHistory';
 
+/**
+ * Functional React component to render data for a single desk.
+ * @user Custodian
+ * @param {object} props - React props.
+ * @returns {JSX.Element} - Rendered component.
+ */
 const DeskDetails = ({
   desk, dates,
   students, room,

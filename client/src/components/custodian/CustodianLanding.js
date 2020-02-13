@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+/**
+ * Functional React component for custodian landing page.
+ * @user Custodian
+ * @returns {JSX.Element} - Rendered component.
+ */
 const CustodianLanding = () => {
   return (
     <div data-test='component-custodian-landing' className='landing-page'>

@@ -2,6 +2,12 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 
+/**
+ * Functional React component diplaying all available dates.
+ * @user Teacher
+ * @param {object} props - React props.
+ * @returns {JSX.Element} - Rendered component.
+ */
 const Dates = ({ dates, loadDates }) => {
   useEffect(() => {
     if (dates.length === 0) {

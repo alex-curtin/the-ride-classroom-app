@@ -1,6 +1,13 @@
 import React from 'react';
 import Moment from 'react-moment';
 
+/**
+ * Functional React component to render all repairs for a single desk.
+ * Child of DeskDetails component.
+ * @user Custodian
+ * @param {object} props - React props.
+ * @returns {JSX.Element} - Rendered component.
+ */
 const DeskRepairs = ({ repairs }) => {
   return (
     <table data-test='component-desk-repairs'>

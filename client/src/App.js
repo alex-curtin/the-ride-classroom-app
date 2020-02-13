@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 
 import Navbar from './components/layout/Navbar';
 import TeacherLanding from './components/teacher/TeacherLanding';
@@ -81,6 +81,10 @@ class App extends Component {
         <Navbar user={user} toggleUser={this.toggleUser} />
         <section className="main-content-container">
           <Switch>
+            <Route
+              exact path='/'
+              render={() => <Redirect to={`/${user}`} />}
+            />
 
             <Route
               exact path='/teacher'

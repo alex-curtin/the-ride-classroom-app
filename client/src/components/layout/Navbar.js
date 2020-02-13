@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+/**
+ * Functional React component to render navbar.
+ * @param {object} props - React props.
+ * @returns {JSX.Element} - Rendered component.
+ */
 const Navbar = ({ user, toggleUser }) => {
   const teacherLinks = (
     <ul data-test='teacher-links'>

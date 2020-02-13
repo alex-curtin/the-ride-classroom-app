@@ -3,6 +3,13 @@ import Moment from 'react-moment'
 
 import { getStudentByDeskAndDate } from '../../services/helpers';
 
+/**
+ * Functional React component to render data by date for a single desk.
+ * Child of DeskDetails component.
+ * @user Custodian
+ * @param {object} props - React props.
+ * @returns {JSX.Element} - Rendered component.
+ */
 const DeskHistory = ({ dates, desk, students }) => {
   return (
     <table data-test='component-desk-history'>

@@ -1,7 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Desk = ({ student }) => {
+/**
+ * Functional React component diplaying a classroom desk.
+ *  Child of DateDetails component.
+ * @user Teacher
+ * @param {object} props - React props.
+ * @returns {JSX.Element} - Rendered component.
+ */
+const DeskItem = ({ student }) => {
   if (student) {
     const { id, bio: { givenName, familyName } } = student;
     return (
@@ -12,4 +19,4 @@ const Desk = ({ student }) => {
   } else return (<div data-test='empty-desk'></div>)
 };
 
-export default Desk;
+export default DeskItem;

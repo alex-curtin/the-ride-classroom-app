@@ -1,6 +1,12 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+/**
+ * Functional React component diplaying list of all desks.
+ * @user Custodian
+ * @param {object} props - React props.
+ * @returns {JSX.Element} - Rendered component.
+ */
 const Desks = ({ desks, loadDesks }) => {
   useEffect(() => {
     if (desks.length === 0) {

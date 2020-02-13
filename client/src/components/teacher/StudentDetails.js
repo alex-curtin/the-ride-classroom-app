@@ -39,7 +39,6 @@ const StudentDetails = ({ student, loadStudents }) => {
           {' '}all students
           </Link>
         <h2 className='page-headline'>{givenName} {familyName}</h2>
-        <p>Student id: <span>{id}</span></p>
         <p>Grade: <span>{grade}</span></p>
         <p>Age: <span>{age}</span></p>
         <p>Email: <span>{email}</span></p>
