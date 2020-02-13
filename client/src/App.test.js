@@ -1,9 +1,11 @@
 import React from 'react';
 import { shallow, ShallowWrapper, mount } from 'enzyme';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import moxios from 'moxios';
 
 import App from './App';
+import DeskDetails from './components/custodian/DeskDetails';
+import DateDetails from './components/teacher/DateDetails';
 import { findByTestAttr } from './testUtils.js';
 
 /**
@@ -18,14 +20,6 @@ const setup = (state = {}) => {
   return wrapper;
 }
 
-const setupWithRouter = (state = {}) => {
-  const wrapper = shallow(
-    <Router>
-      <App />
-    </Router>);
-  wrapper.setState(state);
-  return wrapper;
-}
 
 describe('App component', () => {
   test('renders without error', () => {
@@ -133,6 +127,6 @@ describe('App component', () => {
 
       const historyProp = wrapper.instance().props.history;
       expect(historyProp.length).toBe(1);
-    })
+    });
   });
 });
