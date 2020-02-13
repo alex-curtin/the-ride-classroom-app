@@ -31,4 +31,10 @@ describe('DeskRepairs component', () => {
     const repairItems = findByTestAttr(wrapper, 'repair-item');
     expect(repairItems.length).toBe(defaultProps.repairs.length);
   });
+
+  test('should render `no repairs` if `repairs` props is empty', () => {
+    const wrapper = setup({ repairs: [] });
+    const noRepairs = findByTestAttr(wrapper, 'no-repairs');
+    expect(noRepairs.length).toBe(1);
+  });
 });

@@ -46,8 +46,7 @@ const DeskDetails = ({
           <span>Purchased: </span>
           <Moment format='MM/DD/YYYY'>{desk.purchased}</Moment>
         </p>
-        <h4>Desk Repair Data</h4>
-        {desk.repairs.length > 0 && (<DeskRepairs repairs={desk.repairs} />)}
+        <DeskRepairs repairs={desk.repairs} />
         <h4>Desk History</h4>
         <DeskHistory dates={dates} desk={desk} students={students} />
       </div>
