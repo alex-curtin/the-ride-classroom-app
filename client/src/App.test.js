@@ -1,6 +1,5 @@
 import React from 'react';
-import { shallow, ShallowWrapper, mount } from 'enzyme';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { shallow, ShallowWrapper } from 'enzyme';
 import moxios from 'moxios';
 
 import App from './App';
@@ -17,7 +16,6 @@ const setup = (state = {}) => {
   wrapper.setState(state);
   return wrapper;
 }
-
 
 describe('App component', () => {
   test('renders without error', () => {
@@ -50,7 +48,6 @@ describe('App component', () => {
 
       const newStudentsState = wrapper.instance().state.students;
       expect(newStudentsState).toEqual(data);
-      moxios.uninstall();
     });
 
     test('loadDates should update `dates` state', async () => {

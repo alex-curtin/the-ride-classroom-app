@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import DeskItem from './DeskItem';
 import { findByTestAttr } from '../../testUtils';
-import { studentsProp } from '../../testUtils/mock-props';
+import { studentsProp } from '../../testUtils/mockData';
 
 const defaultProps = { student: studentsProp[0] }
 

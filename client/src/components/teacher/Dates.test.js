@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import Dates from './Dates';
 import { findByTestAttr } from '../../testUtils';
-import { datesProp } from '../../testUtils/mock-props';
+import { datesProp } from '../../testUtils/mockData';
 
 const defaultProps = {
   dates: datesProp

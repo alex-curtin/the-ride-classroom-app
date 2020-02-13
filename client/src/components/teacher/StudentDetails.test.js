@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import StudentDetails from './StudentDetails';
 import { findByTestAttr } from '../../testUtils';
-import { studentsProp } from '../../testUtils/mock-props';
+import { studentsProp } from '../../testUtils/mockData';
 
 const defaultProps = {
   student: studentsProp[0]

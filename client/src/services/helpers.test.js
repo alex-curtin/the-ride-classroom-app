@@ -1,5 +1,5 @@
 import { getStudentByPositionId, getAbsentStudents, getStudentByDeskAndDate } from './helpers';
-import { studentsProp, datesProp, } from '../testUtils/mock-props';
+import { studentsProp, datesProp, } from '../testUtils/mockData';
 
 describe('helper functions', () => {
   describe('getStudentByPositionId', () => {

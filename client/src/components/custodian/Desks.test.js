@@ -4,7 +4,7 @@ import { StaticRouter as Router } from 'react-router-dom';
 
 import Desks from './Desks';
 import { findByTestAttr } from '../../testUtils';
-import { desksProp } from '../../testUtils/mock-props';
+import { desksProp } from '../../testUtils/mockData';
 
 const defaultProps = { desks: desksProp };
 

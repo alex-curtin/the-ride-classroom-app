@@ -4,7 +4,7 @@ import { shallow, mount, ReactWrapper } from 'enzyme';
 
 import DeskDetails from './DeskDetails';
 import { findByTestAttr } from '../../testUtils';
-import { desksProp, datesProp, studentsProp, roomsProp } from '../../testUtils/mock-props';
+import { desksProp, datesProp, studentsProp, roomsProp } from '../../testUtils/mockData';
 
 const defaultProps = {
   dates: datesProp,

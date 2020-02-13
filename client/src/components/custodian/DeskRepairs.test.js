@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import DeskRepairs from './DeskRepairs';
 import { findByTestAttr } from '../../testUtils';
-import { desksProp } from '../../testUtils/mock-props';
+import { desksProp } from '../../testUtils/mockData';
 
 const defaultProps = {
   repairs: desksProp[0].repairs
