@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
+import { shallow, ShallowWrapper, mount } from 'enzyme';
 import moxios from 'moxios';
 
 import App from './App';
